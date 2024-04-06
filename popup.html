@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {background-color: powderblue;
+            margin: 10px;
+            text-align: center;
+        }
+        input {
+            width: 50%;
+        }
+        /* h1   {color: blue;} */
+        /* p    {color: red;} */
+        button {
+            padding: 15px;
+            width: 150px;
+            background-color: white;
+            border-color:white;
+            box-shadow: grey;
+        };
+        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Linkedin Page Invite</title>
-    <div>
-        <button id="selectall"">Select All</button>
-        <script src ="contentScript.js" defer></script>
-    </div>
 
 </head>
 <body>
-    
+    <title>Linkedin / Twitter Automation</title>
+    <div>
+        <button id="selectalllinkedin">Select All Linkedin Page Invites</button>
+<p></p>
+<hr>
+<p></p>
+<p>Enter scroll amount:</p>
+        <input id="scrollAmount" type="number" value="5">
+<p></p>
+        <button id="likestwitter">Auto-Like Tweets</button>
+        <script src ="contentScript.js" defer></script>
+    </div>
+
 </body>
 </html>
-

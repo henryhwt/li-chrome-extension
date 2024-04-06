@@ -1,18 +1,16 @@
 {
-    "name": "Linkedin Page Invite",
+    "name": "Linkedin / Twitter Automation",
     "version": "0.1.0",
-    "description": "Invite connections to follow Linkedin Business Page - HT",
+    "description": "Linkedin / Twitter Automation - HT",
     "permissions": ["scripting", "activeTab"],
-    "host_permissions": ["https://*.linkedin.com/*"],
+    "host_permissions": ["https://*.linkedin.com/*", "https://twitter.com/*"],
     "icons": {
         "32": "sunglasses.png"
     },
-    // "background": {
-    //   "service_worker": "background.js"
-    // },
+
     "content_scripts": [
       {
-        "matches": ["https://*.linkedin.com/*"],
+        "matches": ["https://*.linkedin.com/*", "https://twitter.com/*"],
         "js": ["contentScript.js"]
       }
     ],
@@ -24,16 +22,12 @@
           "assets/delete.png",
           "assets/save.png"
         ],
-        "matches": ["https://*.linkedin.com/*"]
+        "matches": ["https://*.linkedin.com/*", "https://twitter.com/*"]
       }
     ],
     "action": {
-    //   "default_icon": {
-    //     "16": "assets/ext-icon.png",
-    //     "24": "assets/ext-icon.png",
-    //     "32": "assets/ext-icon.png"
-    //   },
-      "default_title": "Linkedin Page Invite",
+
+      "default_title": "Linkedin / Twitter Automation",
       "default_popup": "popup.html"
     },
     "manifest_version": 3
