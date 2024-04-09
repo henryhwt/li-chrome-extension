@@ -21,9 +21,7 @@ licheckboxes.addEventListener("click", async () => {
 //     item.click()
 // }
 
-
-
-// document.querySelectorAll('[data-testid="like"]').forEach(e => e.click())
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 
 document.getElementById('likestwitter').addEventListener('click', async() => {
@@ -34,11 +32,12 @@ document.getElementById('likestwitter').addEventListener('click', async() => {
     
         chrome.scripting.executeScript({
             target: { tabId: tab.id },
-            func: (amount) => {
+            func: async (amount) => {
+                const delay = 500;
                 for (let i = 0; i < amount; i++) {
                     document.querySelectorAll('[data-testid="like"]').forEach(e => e.click());
-                    window.scrollBy(0, window.innerHeight);
-                    console.log(i);
+                    setTimeout(() => window.scrollBy(0, window.innerHeight), i * delay);
+                    setTimeout(() => document.querySelectorAll('[data-testid="like"]').forEach(e => e.click()), i * delay);
                 }
             },
             args: [scrollAmount] 
